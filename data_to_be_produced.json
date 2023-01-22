@@ -1,0 +1,1 @@
+{"schema": {"type": "struct","fields": [{"type": "int64","optional": false,"field": "id"}, {"type": "string","optional": true,"field": "title"}],"optional": false,"name": "foobar"},"payload": {"id": 1,"title": "bar"}}
