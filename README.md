@@ -38,6 +38,9 @@ ID  TITLE
 1	bar
 
 ## Register schema
+# Run schema registry
+./bin/schema-registry-start ./etc/schema-registry/schema-registry.properties
+
 curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" --data '{"schema": "{\"type\":\"record\",\"name\":\"Books\",\"namespace\":\"books.examples\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"title\",\"type\":\"string\"}]}"}' http://localhost:8081/subjects/books-value/versions
 
 # Run the connector
