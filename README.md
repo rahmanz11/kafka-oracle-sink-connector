@@ -47,5 +47,5 @@ curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" --data '{
 ./confluent-7.3.1/bin/connect-standalone ./confluent-7.3.1/etc/kafka/connect-standalone.properties config.properties
 
 # Produce data
-./kafka-console-producer --broker-list localhost:9092 --topic books
+./kafka-console-producer --broker-list localhost:9092 --topic books --property schema.registry.url=http://localhost:8081 --property value.schema.id=1
 > {"id": 1,"title": "bar"}
