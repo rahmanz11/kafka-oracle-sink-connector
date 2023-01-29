@@ -36,3 +36,13 @@ SQL> select * from books;
 ID  TITLE
 --- -----
 1	bar
+
+## Register schema
+curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" --data '{"schema": "{\"type\":\"record\",\"name\":\"Books\",\"namespace\":\"books.examples\",\"fields\":[{\"name\":\"id\",\"type\":\"long\"},{\"name\":\"title\",\"type\":\"string\"}]}"}' http://localhost:8081/subjects/books-value/versions
+
+# Run the connector
+./confluent-7.3.1/bin/connect-standalone ./confluent-7.3.1/etc/kafka/connect-standalone.properties config.properties
+
+# Produce data
+./kafka-console-producer --broker-list localhost:9092 --topic books
+> {"id": 1,"title": "bar"}
