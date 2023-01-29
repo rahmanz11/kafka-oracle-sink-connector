@@ -1,0 +1,17 @@
+{
+   "schemaType":"JSON",
+   "$schema":"http://json-schema.org/draft-07/schema#",
+   "title":"Books",
+   "type":"object",
+   "properties":{
+      "id":{
+         "type":"int64"
+      },
+      "title":{
+         "type":"string"
+      }
+   },
+   "required":[
+      "id"
+   ]
+}
